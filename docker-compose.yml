@@ -1,6 +1,14 @@
 version: '3.10.1'
 
 services:
+  nginx:
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
   db:
     image: postgres
     ports:
